@@ -1,0 +1,2 @@
+### Récupération d'un cadex
+GET http://localhost:3000/cadex
