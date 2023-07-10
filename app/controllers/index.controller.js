@@ -32,9 +32,8 @@ export default {
     // On appelle une méthode qui est chargé de généré et de nous retourner un cadex en se servant
     // des données récupérées précédemment.
     const cadex = cadexService.generate(data);
-
     // Etape de réponse à la requête client
-    res.json({ cadex });
+    res.json({ cadex: cadex.glue() });
   },
 
 };
