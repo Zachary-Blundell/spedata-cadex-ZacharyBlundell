@@ -86,33 +86,33 @@ describe('generate return value', () => {
     });
   });
 
-  describe('glue property', () => {
-    test('generate must return an object with glue property', () => {
-      expect(cadexObject).toHaveProperty('glue');
+  describe('toString property', () => {
+    test('generate must return an object with toString property', () => {
+      expect(cadexObject).toHaveProperty('toString');
     });
-    test('glue property must contain a string', () => {
-      expect(typeof cadexObject.glue).toBe('function');
+    test('toString property must contain a string', () => {
+      expect(typeof cadexObject.toString).toBe('function');
     });
 
-    // Comme potentiellement la méthode glue n'existe pas, elle peut ne pas être exécuté. Il faut
-    // donc conditionné sont exécution avec l'optional chaining
-    const cadex = cadexObject?.glue();
+    // Comme potentiellement la méthode toString n'existe pas, elle peut ne pas être exécuté. Il
+    // faut donc conditionné sont exécution avec l'optional chaining
+    const cadex = cadexObject?.toString();
 
-    test('glue must return a string', () => {
+    test('toString must return a string', () => {
       expect(typeof cadex).toBe('string');
     });
-    test('glue must return a string with at least 10 character', () => {
+    test('toString must return a string with at least 10 character', () => {
       expect(cadex.length).toBeGreaterThanOrEqual(10);
     });
-    test('glue must return a string with at least 3 spaces', () => {
+    test('toString must return a string with at least 3 spaces', () => {
       // Ici words est un tableau de mots
       const words = cadex.split(' ');
       expect(words.length).toBeGreaterThanOrEqual(4);
     });
 
-    // Par contre on ne va pas comparé la valeur de retour de glue dans le fichier de test, car pour
-    // se faire il faudrait reproduire la complexité du service dans le fichier de test, ce qui est
-    // trop limitant dans l'évolution possible du service, et ajoute trop d'algorithmie pour un
+    // Par contre on ne va pas comparé la valeur de retour de toString dans le fichier de test, car
+    // pour se faire il faudrait reproduire la complexité du service dans le fichier de test, ce qui
+    // est trop limitant dans l'évolution possible du service, et ajoute trop d'algorithmie pour un
     // fichier de test
   });
 });
