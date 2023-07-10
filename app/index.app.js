@@ -3,6 +3,10 @@ import router from './routers/index.router.js';
 
 const app = express();
 
+// Body parser permettant de stocker les donnnées fourni par l'utilsateur au format JSON dans
+// req.body
+app.use(express.json());
+
 app.use(router);
 
 // Pour export un objet ou autre chose en ESM, on utilise le mot clé export, si jamais la seule et

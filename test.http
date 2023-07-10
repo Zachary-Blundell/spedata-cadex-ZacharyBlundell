@@ -1,2 +1,16 @@
 ### Récupération d'un cadex
 GET http://localhost:3000/cadex
+
+### Récupération d'un cadex personnalisé qui devrait tombé en erreur
+GET http://localhost:3000/cadex?michel=truc&machin=45
+
+### Récupération d'un cadex personnalisé qui devrait fonctionner
+GET http://localhost:3000/cadex?verb=empile
+
+### Récupération d'un cadex personnalisé qui devrait fonctionner avec enregistrement
+POST http://localhost:3000/cadex
+Content-Type: application/json
+
+{
+  "name": "Razack"
+}
